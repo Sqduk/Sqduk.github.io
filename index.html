@@ -13,15 +13,18 @@
         }
 
         :root {
-            /* Изменено на глубокий синий/космический фон */
             --bg-color: #050b14;
             --bg-gradient: radial-gradient(circle at top right, #0f2547, #050b14 60%);
-            /* Изменен акцент на неоново-голубой */
             --accent: #00d2ff; 
             --accent-hover: #00e5ff;
             --text-main: #ffffff;
             --text-muted: #9ba8b5;
             --card-bg: #f4f7f9;
+        }
+
+        /* Включаем плавную прокрутку для якорных ссылок */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -145,7 +148,6 @@
             background-color: var(--accent-hover);
         }
 
-        /* Декоративный шар на фоне (изменен на синий) */
         .hero-bg-glow {
             position: absolute;
             right: 0;
@@ -221,7 +223,6 @@
             gap: 30px;
         }
 
-        /* Карточка работы */
         .card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -237,10 +238,9 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
         }
 
-        /* Контейнер для картинки, чтобы она не обрезалась */
         .card-img-wrapper {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Делает карточки квадратными */
+            aspect-ratio: 1 / 1;
             background-color: #ffffff;
             border-radius: 12px;
             overflow: hidden;
@@ -253,7 +253,7 @@
         .card-img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Картинка вписывается полностью, не обрезаясь */
+            object-fit: contain;
             transition: transform 0.4s ease;
         }
 
@@ -261,7 +261,6 @@
             transform: scale(1.05);
         }
 
-        /* Информация под картинкой (темный текст на светлом фоне) */
         .card-info {
             display: flex;
             justify-content: space-between;
@@ -320,12 +319,44 @@
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
 
+        /* --- НОВАЯ СЕКЦИЯ "ОБО МНЕ" --- */
+        .about-section {
+            padding: 100px 5%;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-container h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            color: var(--accent);
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
         /* --- ПОДВАЛ (FOOTER) --- */
         footer {
             background: #03070d;
             padding: 60px 5% 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            margin-top: 50px;
         }
 
         .footer-content {
@@ -360,6 +391,8 @@
             color: white;
             text-decoration: none;
             transition: background 0.3s ease;
+            font-weight: bold;
+            font-size: 12px;
         }
 
         .social-icon:hover {
@@ -393,6 +426,7 @@
         /* --- АДАПТИВНОСТЬ --- */
         @media (max-width: 992px) {
             .hero h1 { font-size: 3rem; }
+            .about-container { padding: 30px; }
         }
 
         @media (max-width: 768px) {
@@ -424,6 +458,9 @@
 
             .section-header h2 { font-size: 2rem; }
             
+            .about-container h2 { font-size: 2rem; }
+            .about-text { font-size: 1rem; }
+            
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -445,10 +482,10 @@
             <ul>
                 <li><a href="#">Главная</a></li>
                 <li><a href="#gallery">Портфолио</a></li>
-                <li><a href="#">Обо мне</a></li>
+                <!-- Ссылка "Обо мне" теперь ведет на секцию ниже -->
+                <li><a href="#about">Обо мне</a></li>
             </ul>
         </nav>
-        <!-- Обновленная кнопка со ссылкой -->
         <a href="https://t.me/sqduk" target="_blank" rel="noopener noreferrer" class="btn-header">Связаться</a>
     </header>
 
@@ -493,8 +530,8 @@
             <!-- Карточка 1 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <!-- Ссылки на картинки оставил на временные, если нужно - замените на свои -->
-                    <img src="https://i.ibb.co/3s6HqK5/image1.png" alt="Криминальный овощ">
+                    <!-- Не забудьте заменить пути на свои картинки! -->
+                    <img src="images/art1.png" alt="Работа 1">
                 </div>
                 <div class="card-info">
                     <div>
@@ -508,7 +545,7 @@
             <!-- Карточка 2 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/L5P0s7v/image2.png" alt="Спортсмен">
+                    <img src="images/art2.png" alt="Работа 2">
                 </div>
                 <div class="card-info">
                     <div>
@@ -522,7 +559,7 @@
             <!-- Карточка 3 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/0jZ4q5d/image3.png" alt="Мышь генерал">
+                    <img src="images/art3.png" alt="Работа 3">
                 </div>
                 <div class="card-info">
                     <div>
@@ -536,7 +573,7 @@
             <!-- Карточка 4 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/6yJk8x9/image4.png" alt="Спанчбоб">
+                    <img src="images/art4.png" alt="Работа 4">
                 </div>
                 <div class="card-info">
                     <div>
@@ -550,7 +587,7 @@
             <!-- Карточка 5 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/9q5QZ8v/image5.png" alt="Черепашка фиолетовая">
+                    <img src="images/art5.png" alt="Работа 5">
                 </div>
                 <div class="card-info">
                     <div>
@@ -564,7 +601,7 @@
             <!-- Карточка 6 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/4T2yH3g/image6.png" alt="Черепашка синяя">
+                    <img src="images/art6.png" alt="Работа 6">
                 </div>
                 <div class="card-info">
                     <div>
@@ -578,7 +615,7 @@
             <!-- Карточка 7 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/1J0y3hC/image7.png" alt="Черепашка оранжевая">
+                    <img src="images/art7.png" alt="Работа 7">
                 </div>
                 <div class="card-info">
                     <div>
@@ -592,7 +629,7 @@
             <!-- Карточка 8 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="https://i.ibb.co/5K1y6vT/image8.png" alt="Черепашка красная">
+                    <img src="images/art8.png" alt="Работа 8">
                 </div>
                 <div class="card-info">
                     <div>
@@ -613,12 +650,22 @@
         </div>
     </section>
 
+    <!-- НОВАЯ СЕКЦИЯ: ОБО МНЕ -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>Обо мне</h2>
+            <p class="about-text">
+                Я вообще хз что тут сказать, тупо проверочная инфа не о чем. <br>
+                Всего хорошего))))
+            </p>
+        </div>
+    </section>
+
     <!-- Подвал -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo">ART.DESIGN</div>
             <div class="socials">
-                <!-- Ссылки на соцсети (можно заменить) -->
                 <a href="https://t.me/sqduk" target="_blank" rel="noopener noreferrer" class="social-icon">TG</a>
                 <a href="#" class="social-icon">X</a>
                 <a href="#" class="social-icon">I</a>
