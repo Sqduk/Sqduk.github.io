@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFT Design Gallery</title>
+    <title>ART.DESIGN - Портфолио</title>
     <style>
         /* --- СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ --- */
         * {
@@ -13,12 +13,15 @@
         }
 
         :root {
-            --bg-color: #07120d;
-            --bg-gradient: radial-gradient(circle at top right, #1a3c2b, #07120d 60%);
-            --accent: #d4ff00;
+            /* Изменено на глубокий синий/космический фон */
+            --bg-color: #050b14;
+            --bg-gradient: radial-gradient(circle at top right, #0f2547, #050b14 60%);
+            /* Изменен акцент на неоново-голубой */
+            --accent: #00d2ff; 
+            --accent-hover: #00e5ff;
             --text-main: #ffffff;
-            --text-muted: #9ba8a0;
-            --card-bg: #eef2f0;
+            --text-muted: #9ba8b5;
+            --card-bg: #f4f7f9;
         }
 
         body {
@@ -36,7 +39,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 5%;
-            background: rgba(7, 18, 13, 0.8);
+            background: rgba(5, 11, 20, 0.8);
             backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
@@ -83,7 +86,8 @@
 
         .btn-header:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(212, 255, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+            background-color: var(--accent-hover);
         }
 
         /* --- ГЕРОЙ СЕКЦИЯ (HERO) --- */
@@ -136,18 +140,19 @@
         }
 
         .btn-main:hover {
-            box-shadow: 0 0 25px rgba(212, 255, 0, 0.6);
+            box-shadow: 0 0 25px rgba(0, 210, 255, 0.6);
             transform: translateY(-3px);
+            background-color: var(--accent-hover);
         }
 
-        /* Декоративный шар на фоне (как на референсе) */
+        /* Декоративный шар на фоне (изменен на синий) */
         .hero-bg-glow {
             position: absolute;
             right: 0;
             top: 10%;
             width: 50vw;
             height: 50vw;
-            background: radial-gradient(circle, rgba(212, 255, 0, 0.15) 0%, rgba(7, 18, 13, 0) 70%);
+            background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, rgba(5, 11, 20, 0) 70%);
             border-radius: 50%;
             z-index: 1;
             pointer-events: none;
@@ -229,7 +234,7 @@
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 255, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
         }
 
         /* Контейнер для картинки, чтобы она не обрезалась */
@@ -305,18 +310,19 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s ease;
+            font-family: inherit;
         }
 
         .filter-btn:hover, .filter-btn.active {
             background: var(--accent);
             color: #000;
             border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(212, 255, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
         }
 
         /* --- ПОДВАЛ (FOOTER) --- */
         footer {
-            background: #040a07;
+            background: #03070d;
             padding: 60px 5% 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 50px;
@@ -332,9 +338,10 @@
         }
 
         .footer-logo {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: 900;
             color: var(--accent);
+            letter-spacing: 2px;
         }
 
         .socials {
@@ -433,23 +440,24 @@
 
     <!-- Шапка сайта -->
     <header>
-        <div class="logo">DESIGN.NFT</div>
+        <div class="logo">ART.DESIGN</div>
         <nav>
             <ul>
                 <li><a href="#">Главная</a></li>
-                <li><a href="#gallery">Коллекция</a></li>
-                <li><a href="#">О нас</a></li>
+                <li><a href="#gallery">Портфолио</a></li>
+                <li><a href="#">Обо мне</a></li>
             </ul>
         </nav>
-        <a href="#" class="btn-header">Связаться</a>
+        <!-- Обновленная кнопка со ссылкой -->
+        <a href="https://t.me/sqduk" target="_blank" rel="noopener noreferrer" class="btn-header">Связаться</a>
     </header>
 
     <!-- Главный экран -->
     <section class="hero">
         <div class="hero-bg-glow"></div>
         <div class="hero-content">
-            <h1>ОТКРОЙ <br><span>БУДУЩЕЕ</span> <br>ДИЗАЙНА</h1>
-            <p>Уникальная коллекция эксклюзивных артов и персонажей. Погрузись в мир современного цифрового искусства, где каждый персонаж — это история.</p>
+            <h1>ИСКУССТВО <br><span>ЦИФРОВОГО</span> <br>ДИЗАЙНА</h1>
+            <p>Уникальная коллекция эксклюзивных артов и персонажей. Погрузись в мир современного цифрового искусства, где каждый персонаж — это отдельная история.</p>
             <a href="#gallery" class="btn-main">Смотреть работы</a>
         </div>
     </section>
@@ -458,7 +466,7 @@
     <section class="stats">
         <div class="stat-item">
             <span class="stat-number">55K</span>
-            <span class="stat-label">Активных юзеров</span>
+            <span class="stat-label">Просмотров</span>
         </div>
         <div class="stat-item">
             <span class="stat-number">47K</span>
@@ -466,26 +474,26 @@
         </div>
         <div class="stat-item">
             <span class="stat-number">42K</span>
-            <span class="stat-label">Художников</span>
+            <span class="stat-label">Клиентов</span>
         </div>
         <div class="stat-item">
             <span class="stat-number">39K</span>
-            <span class="stat-label">Продаж</span>
+            <span class="stat-label">Скачиваний</span>
         </div>
     </section>
 
     <!-- Галерея -->
     <section class="gallery-section" id="gallery">
         <div class="section-header">
-            <h2>ПОПУЛЯРНАЯ <span>КОЛЛЕКЦИЯ</span></h2>
-            <p>Наши лучшие дизайнерские работы. Уникальный стиль, проработанные детали и яркие персонажи, которые не оставят вас равнодушными.</p>
+            <h2>ПОПУЛЯРНЫЕ <span>РАБОТЫ</span></h2>
+            <p>Лучшие дизайнерские проекты. Уникальный стиль, проработанные детали и яркие персонажи, которые не оставят вас равнодушными.</p>
         </div>
 
         <div class="gallery-grid">
             <!-- Карточка 1 -->
             <div class="card">
                 <div class="card-img-wrapper">
-                    <!-- Замените src на путь к вашей картинке -->
+                    <!-- Ссылки на картинки оставил на временные, если нужно - замените на свои -->
                     <img src="https://i.ibb.co/3s6HqK5/image1.png" alt="Криминальный овощ">
                 </div>
                 <div class="card-info">
@@ -608,9 +616,10 @@
     <!-- Подвал -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">DESIGN.NFT</div>
+            <div class="footer-logo">ART.DESIGN</div>
             <div class="socials">
-                <a href="#" class="social-icon">F</a>
+                <!-- Ссылки на соцсети (можно заменить) -->
+                <a href="https://t.me/sqduk" target="_blank" rel="noopener noreferrer" class="social-icon">TG</a>
                 <a href="#" class="social-icon">X</a>
                 <a href="#" class="social-icon">I</a>
                 <a href="#" class="social-icon">D</a>
@@ -621,7 +630,7 @@
             </div>
         </div>
         <div class="copyright">
-            &copy; 2024 DESIGN.NFT. Все права защищены. Все персонажи являются вымышленными.
+            &copy; 2024 ART.DESIGN. Все права защищены. Все персонажи являются вымышленными.
         </div>
     </footer>
 
